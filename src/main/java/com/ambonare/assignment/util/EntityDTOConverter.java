@@ -19,7 +19,7 @@ public final class EntityDTOConverter {
 	 * @return {@link StudentDto}
 	 */
 	public static StudentDto convertToDto(Student student) {
-		return modelMapper.map(student, StudentDto.class);
+		return student == null ? null : modelMapper.map(student, StudentDto.class);
 	}
 
 	/**
@@ -29,7 +29,7 @@ public final class EntityDTOConverter {
 	 * @return {@link StudentClassDto}
 	 */
 	public static StudentClassDto convertToDto(StudentClass studentClass) {
-		return modelMapper.map(studentClass, StudentClassDto.class);
+		return studentClass == null ? null : modelMapper.map(studentClass, StudentClassDto.class);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public final class EntityDTOConverter {
 	 * @return {@link Student}
 	 */
 	public static Student convertToEntity(StudentDto studentDto) {
-		return modelMapper.map(studentDto, Student.class);
+		return studentDto == null ? null : modelMapper.map(studentDto, Student.class);
 	}
 
 	/**
@@ -49,6 +49,6 @@ public final class EntityDTOConverter {
 	 * @return {@link StudentClass}
 	 */
 	public static StudentClass convertToEntity(StudentClassDto studentClassDto) {
-		return modelMapper.map(studentClassDto, StudentClass.class);
+		return studentClassDto == null ? null : modelMapper.map(studentClassDto, StudentClass.class);
 	}
 }
